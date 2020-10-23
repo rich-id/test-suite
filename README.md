@@ -34,7 +34,9 @@ composer require richcongress/test-suite
 Then, please check the documentation of the various libraries:
 - [Test Framework](https://github.com/richcongress/test-framework/blob/master/README.md)
 - [Test Tools](https://github.com/richcongress/test-tools/blob/master/README.md)
-- [Test Framework](https://github.com/richcongress/web-test-bundle/blob/master/README.md)
+- [Web Test Bundle](https://github.com/richcongress/web-test-bundle/blob/master/README.md)
+- [Fixture Test Bundle](https://github.com/richcongress/fixture-test-bundle/blob/master/README.md)
+- [Reccurent Fixture Test Bundle](https://github.com/richcongress/recurrent-fixture-test-bundle/blob/master/README.md)
 
 
 # 2. Versioning
