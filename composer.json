@@ -14,17 +14,6 @@
         "richcongress/test-tools": "dev-master",
         "richcongress/web-test-bundle": "dev-master"
     },
-    "require-dev": {
-        "doctrine/annotations": "^1.11@dev",
-        "doctrine/orm": "^2.0|^3.0",
-        "php-coveralls/php-coveralls": "^2.1",
-        "phpunit/phpunit": "^8.0",
-        "roave/security-advisories": "dev-master",
-        "symfony/dependency-injection": "^4.0 || ^5.0",
-        "symfony/security": "^4.0|^5.0",
-        "symfony/translation": "^4.0|^5.0",
-        "symfony/validator": "^4.0|^5.0"
-    },
     "config": {
         "sort-packages": true
     }
