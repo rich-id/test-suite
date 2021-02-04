@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+    application:
+        container_name: test_suite_app
+        image: richcongress/php:7.3-composer-2
+        volumes:
+            - .:/app:rw,cached
+            - ~/.composer:/home/application/.composer:cached
+            - ~/Bundles:/home/nover/Bundles
