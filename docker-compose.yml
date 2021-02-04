@@ -6,4 +6,3 @@ services:
         volumes:
             - .:/app:rw,cached
             - ~/.composer:/home/application/.composer:cached
-            - ~/Bundles:/home/nover/Bundles
