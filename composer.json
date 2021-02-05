@@ -3,7 +3,6 @@
     "description": "The full RichCongress test suite for Symfony",
     "type": "symfony-bundle",
     "license": "MIT",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "RichCongress",
@@ -12,10 +11,11 @@
     ],
     "require": {
         "php": ">=7.3",
-        "richcongress/recurrent-fixtures-test-bundle": "*"
-    },
-    "require-dev": {
-        "richcongress/recurrent-fixtures-test-bundle": "dev-master"
+        "richcongress/test-framework": "^0.1",
+        "richcongress/test-tools": "^0.1",
+        "richcongress/fixture-test": "^0.1",
+        "richcongress/web-test-bundle": "^0.1",
+        "richcongress/recurrent-fixtures-test-bundle": "^0.1"
     },
     "autoload": {
         "psr-4": {
@@ -30,21 +30,5 @@
     "config": {
         "discard-changes": true,
         "sort-packages": true
-    },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/home/nover/Bundles/RECURRENT-FIXTURES-TEST",
-            "options": {
-                "symlink": true
-            }
-        },
-        {
-            "type": "path",
-            "url": "/home/nover/Bundles/FIXTURE-TEST",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
+    }
 }
