@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "RichCongress\\TestSuite\\": ""
+            "RichCongress\\TestSuite\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "RichCongress\\TestSuite\\Tests\\": "Tests/"
+            "RichCongress\\TestSuite\\Tests\\": "tests/"
         }
     },
     "config": {

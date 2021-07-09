@@ -1,0 +1,97 @@
+= The Test Tools library
+ifdef::env-github[]
+:imagesdir:
+ https://gist.githubusercontent.com/path/to/gist/revision/dir/with/all/images
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+ifndef::env-github[]
+:imagesdir: ./
+endif::[]
+:toc:
+:toc-placement!:
+
+image:https://img.shields.io/packagist/v/richcongress/test-suite[link="https://packagist.org/packages/richcongress/test-suite"]
+image:https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat[link="https://github.com/richcongress/test-suite/issues"]
+image:https://img.shields.io/badge/license-MIT-blue.svg[link="LICENSE.md"]
+image:https://img.shields.io/badge/PHP-7.3%2B-yellow[]
+image:https://img.shields.io/badge/Symfony-4%2B-black[]
+image:https://img.shields.io/badge/Symfony-5%2B-black[]
+
+This bundle is a shortcut to install the whole RichCongress test suite for Symfony. It requires **PHP 7.3+** and **Symfony 4** or **Symfony 5**.
+
+== Quick showcase
+
+The suite gives you a big set of tools to improve the test lisibility, and ensure that every tool work properly without interfearing with each other.
+
+A great drawing is always better than a long speech.
+
+image::./assets/test_suite_schema.png[]
+
+To learn more, checkout the various examples available <<3. Examples>>.
+
+
+== Table of content
+
+<<1. Installation>> +
+<<2. Documentation>> +
+<<3. Examples>> +
+<<4. Versioning>> +
+<<5. Contributing>> +
+<<6. License>> +
+
+
+== 1. Installation
+
+[source,bash]
+----
+composer require richcongress/test-suite
+----
+
+Then, please check the documentation of the various libraries:
+- link:https://github.com/richcongress/test-framework/blob/master/README.md[Test Framework]
+- link:https://github.com/richcongress/test-tools/blob/master/README.md[Test Tools]
+- link:https://github.com/richcongress/web-test-bundle/blob/master/README.md[Web Test Bundle]
+- link:https://github.com/richcongress/fixture-test/blob/master/README.md[Fixture Library]
+- link:https://github.com/richcongress/recurrent-fixture-test-bundle/blob/master/README.md[Recurrent Fixture Test Bundle]
+
+
+== 2. Documentation
+
+NOTE: All annotations also support the PHP 8 attribute usage.
+
+- link:docs/with_container.adoc[Test with a Container]
+
+
+== 3. Examples
+
+
+== 4. Versioning
+
+test-suite follows link:https://semver.org/[semantic versioning]. In short the scheme is MAJOR.MINOR.PATCH where
+1. MAJOR is bumped when there is a breaking change,
+2. MINOR is bumped when a new feature is added in a backward-compatible way,
+3. PATCH is bumped when a bug is fixed in a backward-compatible way.
+
+Versions bellow 1.0.0 are considered experimental and breaking changes may occur at any time.
+
+
+== 5. Contributing
+
+Contributions are welcomed! There are many ways to contribute, and we appreciate all of them. Here are some of the major ones:
+
+* link:https://github.com/richcongress/test-suite/issues[Bug Reports] While we strive for quality software, bugs can happen and we can't fix issues we're not aware of. So please report even if you're not sure about it or just want to ask a question. If anything the issue might indicate that the documentation can still be improved!
+* link:https://github.com/richcongress/test-suite/issues[Feature Request]: You have a use case not covered by the current api? Want to suggest a change or add something? We'd be glad to read about it and start a discussion to try to find the best possible solution.
+* link:https://github.com/rich-id/test-suite/pulls[Pull Request]: Want to contribute code or documentation? We'd love that! If you need help to get started, GitHub as link:https://help.github.com/articles/about-pull-requests/[documentation] on pull requests. We use the link:https://help.github.com/articles/about-collaborative-development-models/["fork and pull model"] were contributors push changes to their personnal fork and then create pull requests to the main repository. Please make your pull requests against the `master` branch.
+
+As a reminder, all contributors are expected to follow our link:CODE_OF_CONDUCT.md[Code of Conduct].
+
+
+== 6. License
+
+test-suite is distributed under the terms of the MIT license.
+
+See link:./LICENSE.md[LICENSE] for details.

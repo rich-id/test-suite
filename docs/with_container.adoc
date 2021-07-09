@@ -1,0 +1,88 @@
+= Test with a Container
+ifdef::env-github[]
+:imagesdir:
+ https://gist.githubusercontent.com/path/to/gist/revision/dir/with/all/images
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+ifndef::env-github[]
+:imagesdir: ./
+endif::[]
+:toc:
+:toc-placement!:
+
+Having a full Container in your test is one of the best tools you can have to properly test your code.Any instanciated service can be fetch from it and used in the test.
+
+
+== Usage
+
+To get a Container, use the `TestConfig("container")` annotation with the appropriate value. This annotation can either be put on a method or a class. A container will be generated respectively for the test, or for each test of the class.
+
+NOTE: Using the Container will create an empty SQLite database in the cache. Its schema will be ready to hosts all your data based on the configuration of your entities, and this database will be reset on each test.
+
+In the following example, the container is instantiated only for the `testGetParameterBag` but not for the next one. If you try to use the container without declaring that you want one, you will throw an exception.
+
+[source,php]
+----
+use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
+use RichCongress\TestSuite\TestCase\TestCase;
+
+final class AnyTest extends TestCase
+{
+    #[TestConfig('container')]
+    public function testGetParameterBag(): void
+    {
+        $parameterBag = $this->getService(ParameterBagInterface::class);
+        self::assertInstanceOf(ParameterBagInterface::class, $parameterBag);
+    }
+
+    public function testGetParameterBagWithoutContainer(): void
+    {
+        $this->getService(ParameterBagInterface::class);
+
+        // Throws an exception
+    }
+}
+----
+
+== Showcases
+
+* You can get a Client to make a request. More on that link:./request.adoc[here].
+* You can get the default manager by using `$this->getManager()` in a test.
+* Similary you can get a repository from the default manager by using `$this->getRepository(AnyClass::class)` in a test.
+
+Here is a small example of a call to a route that creates a page, and a check that a new page is properly added to the database.
+
+[source,php]
+----
+use RichCongress\TestFramework\TestConfiguration\Annotation\TestConfig;
+use RichCongress\TestSuite\TestCase\TestCase;
+
+    #[TestConfig('container')]
+final class AnyTest extends TestCase
+{
+    public function testCreatePage(): void
+    {
+        $response = $this->getClient()->post('/pages');
+        self::assertStatusCode(Response::HTTP_CREATED, $response);
+
+        $pages = $this->getRepository(Pages::class)->findAll();
+        self::assertCount(1, $pages);
+    }
+
+    public function testCanFlushPageInPeace(): void
+    {
+        $page = new Page();
+        $this->getManager()->persist($page);
+        $this->getManager()->flush();
+
+        $pages = $this->getRepository(Pages::class)->findAll();
+        self::assertCount(1, $pages);
+    }
+}
+----
+
+WARNING: If it is really convenient to get a Service all call whatever method it exposes, keep in mind that it may have side effects. Dialoging with an external service is typically the worst scenario that can happen. You don't want a test to depend on the outside world neither you want to send random data to it. For instance, having a test that sends email each time it runs is really bad.
