@@ -2,7 +2,9 @@
 
 namespace RichCongress\TestSuite\TestCase;
 
+use Symfony\Component\Security\Core\Authentication\Token\NullToken;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\VoterInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -24,14 +26,11 @@ abstract class VoterTestCase extends \RichCongress\RecurrentFixturesTestBundle\T
      *
      * @return UsernamePasswordToken
      */
-    public function getToken(UserInterface $user = null, array $roles = []): UsernamePasswordToken
+    public function getToken(UserInterface $user = null, array $roles = []): TokenInterface
     {
-        return new UsernamePasswordToken(
-            $user ?? 'anon.',
-            null,
-            'main',
-            $roles
-        );
+        return $user
+            ? new UsernamePasswordToken($user, 'main', $roles)
+            : new NullToken();
     }
 
     /**

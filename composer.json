@@ -10,12 +10,12 @@
         }
     ],
     "require": {
-        "php": ">=7.3",
-        "richcongress/test-framework": "^0.1",
-        "richcongress/test-tools": "^0.1",
-        "richcongress/fixture-test": "^0.1",
-        "richcongress/web-test-bundle": "^0.1",
-        "richcongress/recurrent-fixtures-test-bundle": "^0.1"
+        "php": "^8.1",
+        "richcongress/test-framework": "v0.2.x-dev",
+        "richcongress/test-tools": "v0.2.x-dev",
+        "richcongress/fixture-test": "v0.2.x-dev",
+        "richcongress/web-test-bundle": "v0.2.x-dev",
+        "richcongress/recurrent-fixtures-test-bundle": "v0.2.x-dev"
     },
     "autoload": {
         "psr-4": {
