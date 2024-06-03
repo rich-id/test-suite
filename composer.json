@@ -11,11 +11,11 @@
     ],
     "require": {
         "php": "^8.1",
-        "richcongress/test-framework": "v0.2.x-dev",
-        "richcongress/test-tools": "v0.2.x-dev",
-        "richcongress/fixture-test": "v0.2.x-dev",
-        "richcongress/web-test-bundle": "v0.2.x-dev",
-        "richcongress/recurrent-fixtures-test-bundle": "v0.2.x-dev"
+        "richcongress/test-framework": "^0.2",
+        "richcongress/test-tools": "^0.2",
+        "richcongress/fixture-test": "^0.2",
+        "richcongress/web-test-bundle": "^0.2",
+        "richcongress/recurrent-fixtures-test-bundle": "^0.2"
     },
     "autoload": {
         "psr-4": {

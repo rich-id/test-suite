@@ -8,7 +8,7 @@ The Test Tools library
 ![PHP](https://img.shields.io/badge/Symfony-4%2B-black)
 ![PHP](https://img.shields.io/badge/Symfony-5%2B-black)
 
-This bundle is a shortcut to install the whole RichCongress test suite for Symfony. It requires **PHP 7.3+** and **Symfony 4** or **Symfony 5**.
+This bundle is a shortcut to install the whole RichCongress test suite for Symfony. It requires **PHP 8.1+** and **Symfony 6** or **Symfony 7**.
 
 # Quick showcase
 
